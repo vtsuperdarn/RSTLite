@@ -1,4 +1,2 @@
-RSTLite
-=======
-
-A Stripped Down Version of RST3.5
+VTRST3.5
+========
