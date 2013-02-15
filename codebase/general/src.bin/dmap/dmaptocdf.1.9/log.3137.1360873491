@@ -1,5 +1,0 @@
-make.version /home/test/RSTLite/codebase/general/src.bin/dmap/dmaptocdf.1.9
-make.help
-./doc/dmaptocdf.doc.xml
-cc -fPIC -Wall -O3 -ansi -D_GNU_SOURCE -D_LINUX -D_SVGLIB_ -I/home/test/rst/include/base -I/home/test/rst/include/general -I/davit/lib/cdf/cdf33_0/cdf/include -c dmaptocdf.c    
-make: *** [dmaptocdf.o] Interrupt
