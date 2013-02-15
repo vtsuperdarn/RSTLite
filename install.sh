@@ -21,5 +21,11 @@ if [ ! -d "$mydir/lib" ]; then
   mkdir $mydir/lib
 fi
 cp libmpfit.a $mydir/lib
+if [ ! -d "$mydir/bin" ]; then
+  mkdir $mydir/bin
+fi
+cd $mydir codebase/base/src.bin/build/makeall.1.21
+make clean
+make
 cd $mydir
 make.code superdarn rst
