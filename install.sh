@@ -22,4 +22,4 @@ if [ ! -d "$mydir/lib" ]; then
 fi
 cp libmpfit.a $mydir/lib
 cd $mydir
-# make.code superdarn rst
+make.code superdarn rst

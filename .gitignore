@@ -1,4 +1,8 @@
 *.a
 *.so
 *~
+testmpfit
+mpfit.o
+
+
 
