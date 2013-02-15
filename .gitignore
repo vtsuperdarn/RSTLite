@@ -3,6 +3,10 @@
 *~
 testmpfit
 mpfit.o
+/include/analysis
+/include/base
+/include/general
+/include/superdarn
 
 
 
