@@ -7,6 +7,6 @@ mpfit.o
 /include/base
 /include/general
 /include/superdarn
-
+/bin/*
 
 
