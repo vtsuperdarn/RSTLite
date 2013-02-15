@@ -7,6 +7,7 @@ then
 fi
 source ~/.bashrc
 export RSTPATH=$mydir
+. $mydir/.profile.bash
 echo $mydir
 cd $mydir/codebase/analysis/src.lib/cmpfit-1.2
 make clean
