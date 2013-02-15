@@ -24,7 +24,7 @@ cp libmpfit.a $mydir/lib
 if [ ! -d "$mydir/bin" ]; then
   mkdir $mydir/bin
 fi
-cd $mydir codebase/base/src.bin/build/makeall.1.21
+cd $mydir/codebase/base/src.bin/build/makeall.1.21
 make clean
 make
 cd $mydir
