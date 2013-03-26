@@ -1,10 +1,10 @@
 #!/bin/bash -x
 mydir=$(pwd)
-if [ "" == "${RSTPATH}" ]
-then
-  echo "export RSTPATH=$mydir" >> ~/.bashrc
-  echo ". \$RSTPATH/.profile.bash" >> ~/.bashrc
-fi
+#if [ "" == "${RSTPATH}" ]
+#then
+echo "export RSTPATH=$mydir" >> ~/.bashrc
+echo ". \$RSTPATH/.profile.bash" >> ~/.bashrc
+#fi
 source ~/.bashrc
 export RSTPATH=$mydir
 . $mydir/.profile.bash
