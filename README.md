@@ -5,13 +5,16 @@ Install Instructions
 ---------------------
 
 1. clone this repo with 
-  git clone https://github.com/vtsuperdarn/RSTLite.git 
+
+    git clone https://github.com/vtsuperdarn/RSTLite.git 
+    
 (requires you to install git, RECOMMENDED)
 OR 
 download the repo as a zip file
 
 2. execute 
-  ./install.sh
+
+    ./install.sh
 
 3. reset your terminal or open a new one
 
