@@ -12,19 +12,21 @@ requires you to install git (RECOMMENDED)
 OR     
 download the repo as a zip file
 
-2) execute 
+2) check `.profile.bash` and make sure `OSTYPE` and `SYSTEM` are set to 'linux' if using Linux or 'darwin' if using MacOS
+
+3) execute 
 
     ./install.sh
 
-3) reset your terminal or open a new one
+4) reset your terminal or open a new one
 
-4) rejoice
+5) rejoice
 
-5) OPTIONAL: you can create a link to it with a nicer name, eg /rst or ~/rst like so
+6) OPTIONAL: you can create a link to it with a nicer name, eg /rst or ~/rst like so
 
     sudo ln -s /path/to/rst /rst
 
-6) more rejoicing
+7) more rejoicing
 
 TL;DR: RUN INSTALL.SH
 
