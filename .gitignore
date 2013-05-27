@@ -2,11 +2,10 @@
 *.so
 *~
 testmpfit
-mpfit.o
+*.o
 /include/analysis
 /include/base
 /include/general
 /include/superdarn
 /bin/*
-
-
+/log

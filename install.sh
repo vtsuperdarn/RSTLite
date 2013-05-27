@@ -31,3 +31,13 @@ make clean
 make
 cd $mydir
 make.code superdarn rst
+
+# Necessary for MacOS
+if [ "$SYSTEM" == "darwin" ]
+then
+    cd $mydir/lib
+    for f in *.dylib
+    do
+        install_name_tool -id "$RSTPATH/lib/$f" $f
+    done
+fi
