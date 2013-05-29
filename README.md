@@ -4,6 +4,12 @@ RSTLite
 Install Instructions
 ---------------------
 
+#### Requirements
+
+* zlib (dev)
+
+#### Install
+
 1) clone this repo with:
 
     git clone https://github.com/vtsuperdarn/RSTLite.git 
