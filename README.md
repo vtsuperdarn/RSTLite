@@ -6,6 +6,7 @@ Install Instructions
 
 #### Requirements
 
+* gcc (incl. c++)
 * zlib (dev)
 
 #### Install
