@@ -9,6 +9,14 @@ source ~/.bashrc
 export RSTPATH=$mydir
 . $mydir/.profile.bash
 echo $mydir
+
+cd $mydir/dependencies/cdf33_0
+make OS=linux ENV=gnu all
+make clean
+make install
+
+
+
 cd $mydir/codebase/analysis/src.lib/cmpfit-1.2
 make clean
 make

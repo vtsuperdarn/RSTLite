@@ -21,21 +21,31 @@ download the repo as a zip file
 
 2) check `.profile.bash` and make sure `OSTYPE` and `SYSTEM` are set to 'linux' if using Linux or 'darwin' if using MacOS
 
-3) execute 
+3) install ncurses
+
+UBUNTU
+
+	sudo apt-get install ncurses-dev
+
+openSUSE
+
+	sudo zypper install ncurses-devel
+
+
+4) execute 
 
     ./install.sh
 
-4) reset your terminal or open a new one
+5) reset your terminal or open a new one
 
-5) rejoice
+6) rejoice
 
-6) OPTIONAL: you can create a link to it with a nicer name, eg /rst or ~/rst like so
+7) OPTIONAL: you can create a link to it with a nicer name, eg /rst or ~/rst like so
 
     sudo ln -s /path/to/rst /rst
 
-7) more rejoicing
+8) more rejoicing
 
-TL;DR: RUN INSTALL.SH
 
 Updates
 -------------
