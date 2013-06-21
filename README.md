@@ -7,8 +7,27 @@ Install Instructions
 #### Requirements
 
 * gcc (incl. c++)
+
+UBUNTU
+
+	sudo apt-get install gcc
+
 * zlib (dev)
 
+UBUNTU
+
+	sudo apt-get install zlib1g-dev
+
+* ncurses (dev)
+
+UBUNTU
+
+	sudo apt-get install ncurses-dev
+
+openSUSE
+
+	sudo zypper install ncurses-devel
+	
 #### Install
 
 1) clone this repo with:
@@ -21,30 +40,20 @@ download the repo as a zip file
 
 2) check `.profile.bash` and make sure `OSTYPE` and `SYSTEM` are set to 'linux' if using Linux or 'darwin' if using MacOS
 
-3) install ncurses
 
-UBUNTU
-
-	sudo apt-get install ncurses-dev
-
-openSUSE
-
-	sudo zypper install ncurses-devel
-
-
-4) execute 
+3) execute 
 
     ./install.sh
 
-5) reset your terminal or open a new one
+4) reset your terminal or open a new one
 
-6) rejoice
+5) rejoice
 
-7) OPTIONAL: you can create a link to it with a nicer name, eg /rst or ~/rst like so
+6) OPTIONAL: you can create a link to it with a nicer name, eg /rst or ~/rst like so
 
     sudo ln -s /path/to/rst /rst
 
-8) more rejoicing
+7) more rejoicing
 
 
 Updates
