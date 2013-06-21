@@ -11,12 +11,17 @@ Install Instructions
 UBUNTU
 
 	sudo apt-get install gcc
+	
+openSUSE
+
+	zypper install -y gcc gcc-c++ make
 
 * zlib (dev)
 
 UBUNTU
 
 	sudo apt-get install zlib1g-dev
+	
 
 * ncurses (dev)
 
