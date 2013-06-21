@@ -1,0 +1,58 @@
+How to run Java CDF Tools
+-------------------------
+1. Set the CLASSPATH environment variable.
+
+   CLASSPATH should point to the following information:
+
+   - the locations (full path names) of the CDFToolsDriver.jar file and
+     cdfjava.jar.  They're located in the cdf33_*-dist/cdfjava/classes and
+     cdftools directory, respectivelyi, where cdf33_*-dist is either 
+     cdf33_0-dist, or cdf33_1-dist, etc, whichever is the most recent release. 
+
+   Example:
+      setenv CLASSPATH .:/home/cdf/cdf33_*-dist/cdfjava/classes/cdfjava.jar: \
+                       /home/cdf/cdf33_*-dist/cdfjava/cdftools/CDFToolsDriver.jar
+         
+        
+2. Set the LD_LIBRARY_PATH environment variable.
+
+   LD_LIBRARY_PATH (DYLD_LIBRARY_PATH for Mac OS X) should point to the 
+   following files:
+   
+   - the location (full path name) of the libcdfNativeLibrary.[so|sl|jnilib]
+
+   - the location (full path name) of the CDF library (libcdf.[so|sl|jnilib]
+
+   Example: 
+      setenv LD_LIBRARY_PATH .:/home/cdf/cdf33_*-dist/cdfjava/lib: \
+                             /home/cdf/cdf33_*-dist/lib 
+
+      Or, for Mac OS X,
+
+      setenv DYLD_LIBRARY_PATH .:/Users/cdf/cdf33_*-dist/cdfjava/lib: \
+                               /Users/cdf/cdf33_*-dist/lib 
+         
+
+3. Invoke a desired CDF tool as follows:
+
+   At the operating system prompt, type
+   "java CDFToolsDriver".
+   This will bring up the main menu from which a desired tool can be invoked by
+   selecting the desired CDF tool with a single click. Alternatively, you can
+   simply enter the specific tool program, instead of going through the tool
+   driver. Enter, at the prompt:
+   "java program_name".
+   where program_name is one of the followings:
+   SkeletonTable, SkeletonCDF, CDFCompare, CDFConvert, CDFInquire, CDFStats,
+   CDFDir, CDFEdit and CDFExport. All program names are case-sensitive.
+
+   Make sure you run the one of the definition files from bin/definitions.{C|B|K} 
+   before you execute the command so that the CDF_BASE environment variable is 
+   defined.
+
+3. Please note: For those programs that allow the option of directing the output 
+   to the screen, instead of a file, make sure that the output is not too big. 
+   The Java machine could be hung or run out of memory for a big output.   
+
+It is advised that the Sun's Java V1.4 be used to run these tools.
+For any questions/comments, please send them to cdfsupport@listserv.gsfc.nasa.gov.
