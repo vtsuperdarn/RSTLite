@@ -12,7 +12,6 @@ echo $mydir
 
 cd $mydir/dependencies/cdf33_0
 make OS=linux ENV=gnu all
-make clean
 make install
 
 
