@@ -81,7 +81,12 @@ struct FitBlock *FitACFMake(struct RadarSite *hd,
     return fptr;
 }
 
-void initFitBlock(struct FitBlock *input, struct RadarParm *prm) {
+int fill_fit_block(struct RadarParm *prm, struct RawData *raw,
+                    struct FitBlock *input, struct FitData *fit){
+
+    int i, j, n;
+    void *tmp=NULL;
+
     input->prm.xcf=prm->xcf;
     input->prm.tfreq=prm->tfreq;
     input->prm.noise=prm->noise.search;
@@ -97,28 +102,10 @@ void initFitBlock(struct FitBlock *input, struct RadarParm *prm) {
     input->prm.cp=prm->cp;
     input->prm.channel=prm->channel;
     input->prm.offset=prm->offset;  /* stereo offset */
-}
-
-int FitACF(struct RadarParm *prm, struct RawData *raw,struct FitBlock *input, struct FitData *fit) {
-
-    
-    int i,j,n;
-    int fnum,goose;
-    void *tmp=NULL;
-
-    if (prm->time.yr < 1993) input->prm.old=1;
-
-    fit->revision.major=FITACF_MAJOR_REVISION;
-    fit->revision.minor=FITACF_MINOR_REVISION;
-
-    initFitBlock(input, prm);
 
     /* need to incorporate Sessai's code for setting the offset
          for legacy data here.
     */
-
-
-    /*TODO: pull this out*/
     if (input->prm.pulse==NULL) tmp=malloc(sizeof(int)*input->prm.mppul);
     else tmp=realloc(input->prm.pulse,sizeof(int)*input->prm.mppul);
     if (tmp==NULL) return -1;
@@ -159,8 +146,6 @@ int FitACF(struct RadarParm *prm, struct RawData *raw,struct FitBlock *input, st
     memset(input->xcfd,0,sizeof(struct complex)*input->prm.nrang*
                                                                      input->prm.mplgs);   
 
-
-
     for (i=0;i<input->prm.nrang;i++) {
         input->prm.pwr0[i]=raw->pwr0[i];
         
@@ -178,6 +163,20 @@ int FitACF(struct RadarParm *prm, struct RawData *raw,struct FitBlock *input, st
         } 
     } 
  
+    return 0;
+}
+int FitACF(struct RadarParm *prm, struct RawData *raw,struct FitBlock *input, struct FitData *fit) {
+
+    int fnum,goose;
+
+    if (prm->time.yr < 1993) input->prm.old=1;
+
+    fit->revision.major=FITACF_MAJOR_REVISION;
+    fit->revision.minor=FITACF_MINOR_REVISION;
+
+    /*initialize the fitblock with prm*/
+    fill_fit_block(prm, raw, input, fit);
+
     FitSetRng(fit,input->prm.nrang);
     if (input->prm.xcf) {
      FitSetXrng(fit,input->prm.nrang);

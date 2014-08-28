@@ -41,7 +41,7 @@
 
 struct RadarParm *prm;
 struct RawData *raw;
-struct FitData *fit;
+struct FitData *fit; 
 struct FitBlock *fblk;
 
 struct RadarNetwork *network;  

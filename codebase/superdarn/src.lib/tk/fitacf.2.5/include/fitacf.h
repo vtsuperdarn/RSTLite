@@ -10,6 +10,6 @@ void FitACFFree(struct FitBlock *fptr);
 struct FitBlock *FitACFMake(struct RadarSite *hd,int year);
 void FitACF(struct RadarParm *prm,struct RawData *ptr,struct FitBlock *input,
 	    struct FitData *fit);
-int initFitBlock(struct FitBlock *input, struct RadarParm *prm);
-
+int fill_fit_block(struct RadarParm *prm, struct RawData *raw,
+                    struct FitBlock *input, struct FitData *fit);
 #endif
