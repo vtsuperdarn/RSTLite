@@ -167,15 +167,20 @@ int fill_fit_block(struct RadarParm *prm, struct RawData *raw,
 }
 int FitACF(struct RadarParm *prm, struct RawData *raw,struct FitBlock *input, struct FitData *fit) {
 
-    int fnum,goose;
+    int fnum, goose, s;
 
-    if (prm->time.yr < 1993) input->prm.old=1;
+    if (prm->time.yr < 1993) {
+        input->prm.old=1;
+    }
 
     fit->revision.major=FITACF_MAJOR_REVISION;
     fit->revision.minor=FITACF_MINOR_REVISION;
 
     /*initialize the fitblock with prm*/
-    fill_fit_block(prm, raw, input, fit);
+    s = fill_fit_block(prm, raw, input, fit);
+    if (s == -1){
+        return -1;
+    }
 
     FitSetRng(fit,input->prm.nrang);
     if (input->prm.xcf) {
@@ -184,8 +189,9 @@ int FitACF(struct RadarParm *prm, struct RawData *raw,struct FitBlock *input, st
     }
     
     
-    goose=((prm->stid)==GOOSEBAY);
+    goose = (prm->stid == GOOSEBAY);
 
-    fnum=do_fit(input,5,goose,fit->rng,fit->xrng,fit->elv,&fit->noise);
+    fnum = do_fit(input, 5, goose, fit->rng, fit->xrng, fit->elv, &fit->noise);
+
     return 0;
 }
